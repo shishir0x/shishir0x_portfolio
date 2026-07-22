@@ -30,10 +30,11 @@ export default function Hero() {
 						<section className='relative z-10'>
 							<p className='text-base text-justify'>
 								I&apos;m Shishir Pandey — a Data Analyst and forever a student
-								of the craft. I love building things for the web and am always
-								on the lookout for new challenges and opportunities to learn.
-								I&apos;m passionate about creating beautiful and functional user
-								experiences. Right now, I&apos;m building cool things at{' '}
+								of the craft. I love diving into datasets to uncover patterns
+								and am always on the lookout for new challenges and
+								opportunities to learn. I&apos;m passionate about data
+								storytelling and driving informed decisions. Right now, I&apos;m
+								analyzing data at{' '}
 								<a
 									href='https://www.aphex.co/'
 									className='underline-magical'
