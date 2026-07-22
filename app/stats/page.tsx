@@ -1,11 +1,5 @@
-import { Fragment, Suspense } from 'react';
 import GithubContributions from '../components/github-contributions/github-contributions';
 import Header from '../components/header';
-import NowPlaying from '../components/spotify/now-playing';
-import SpotifySkeleton from '../components/spotify/spotify-skeleton';
-import TopTracks from '../components/spotify/top-tracks';
-import WakaStats from '../components/wakatime/wakastats';
-import WakatimeSkeleton from '../components/wakatime/wakatime-skeleton';
 
 export const metadata = {
 	title: 'Stats',
@@ -25,18 +19,6 @@ export default function StatsPage() {
 
 			<section className='space-y-3'>
 				<GithubContributions />
-				<Suspense
-					fallback={
-						<Fragment>
-							<WakatimeSkeleton />
-							<SpotifySkeleton />
-						</Fragment>
-					}
-				>
-					<WakaStats />
-					<TopTracks />
-				</Suspense>
-				<NowPlaying />
 			</section>
 		</div>
 	);
