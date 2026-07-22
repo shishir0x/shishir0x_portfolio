@@ -28,19 +28,7 @@ cd shishir0x
 bun install
 ```
 
-1. Create a `.env.local` file following the `.env.example`
-
-```bash
-cp .env.example .env.local
-```
-
-5. Add your environment variables to `.env.local`
-
-```txt
-// ...
-```
-
-6. Run the development server
+4. Run the development server
 
 ```bash
 bun run dev
