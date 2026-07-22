@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 		default: 'Shishir Pandey',
 	},
 	description: 'I build things for the web.',
-	metadataBase: new URL('https://dalelarroder.com'),
+	metadataBase: new URL('https://shishirpandey085.com.np'),
 	openGraph: {
 		images: [
 			{

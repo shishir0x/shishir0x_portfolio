@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "dalelarroder.com",
+      "name": "shishir0x",
       "dependencies": {
         "@octokit/graphql": "^9.0.0",
         "@radix-ui/react-tooltip": "1.2.8",

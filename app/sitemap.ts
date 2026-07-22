@@ -1,7 +1,5 @@
 import { getPosts } from './thoughts/utils';
-
-export const baseUrl = 'https://dalelarroder.com';
-
+export const baseUrl = 'https://shishirpandey085.com.np';
 export default async function sitemap() {
 	const blogs = getPosts().map((post) => ({
 		url: `${baseUrl}/thoughts/${post.slug}`,
