@@ -13,7 +13,7 @@
 1. Clone this repo
 
 ```bash
-git clone git@github.com:shishir0x/shishir0x.git
+git clone https://github.com/shishir0x/shishir0x_portfolio.git
 ```
 
 2. Change directory
