@@ -7,7 +7,7 @@ const getWakatimeToken = cache(() => {
 	const secret_key = process.env.WAKATIME_SECRET_KEY;
 
 	if (!secret_key) {
-		throw new Error('WAKATIME_SECRET_KEY is required');
+		return null;
 	}
 
 	const encodedKey = Buffer.from(`${secret_key} :`).toString('base64');
@@ -17,9 +17,49 @@ const getWakatimeToken = cache(() => {
 
 const token = getWakatimeToken();
 
-// https://wakatime.com/developers#all_time_since_today
+const emptyAllTimeStats: WakaTimeAllTimeStats = {
+	daily_average: 0,
+	decimal: '0.00',
+	digital: '0:00',
+	is_up_to_date: true,
+	percent_calculated: 100,
+	range: {
+		end: '',
+		end_date: '',
+		end_text: '',
+		start: '',
+		start_date: '',
+		start_text: '',
+		timezone: '',
+	},
+	text: '0 hrs 0 mins',
+	timeout: 15,
+	total_seconds: 0,
+};
+
+const emptyUserStats: UserStats = {
+	best_day: { date: new Date().toISOString(), text: '', total_seconds: 0 },
+	human_readable_daily_average: '',
+	human_readable_total: '',
+	daily_average: 0,
+	total_seconds: 0,
+	total_seconds_including_other_language: 0,
+	projects: [
+		{
+			name: 'No data',
+			total_seconds: 0,
+			percent: 0,
+			decimal: '0.00',
+			digital: '0:00',
+			text: '0',
+		},
+	],
+};
+
 export const getAllTimeStats = cache(
 	async (): Promise<WakaTimeAllTimeStats> => {
+		if (!token) return emptyAllTimeStats;
+
 		const response = await fetch(
 			`${WAKATIME_ENDPOINT}/users/current/all_time_since_today`,
 			{
@@ -31,6 +71,7 @@ export const getAllTimeStats = cache(
 
 		if (!response.ok) {
 			console.error('Error:', response.status, await response.text());
+			return emptyAllTimeStats;
 		}
 
 		const result = await response.json();
@@ -39,8 +80,9 @@ export const getAllTimeStats = cache(
 	},
 );
 
-// https://wakatime.com/developers#stats
 export const getStatsThisWeek = cache(async (): Promise<UserStats> => {
+	if (!token) return emptyUserStats;
+
 	const response = await fetch(
 		`${WAKATIME_ENDPOINT}/users/current/stats/last_7_days`,
 		{
@@ -52,6 +94,7 @@ export const getStatsThisWeek = cache(async (): Promise<UserStats> => {
 
 	if (!response.ok) {
 		console.error('Error:', response.status, await response.text());
+		return emptyUserStats;
 	}
 
 	const result = await response.json();

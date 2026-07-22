@@ -12,6 +12,9 @@ const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks?time_range
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 const getAccessToken = cache(async () => {
+	if (!refresh_token) {
+		return { access_token: null };
+	}
 	const response = await fetch(TOKEN_ENDPOINT, {
 		method: 'POST',
 		headers: {
@@ -30,9 +33,10 @@ const getAccessToken = cache(async () => {
 	const data = await response.json();
 
 	if (!response.ok) {
-		throw new Error(
+		console.error(
 			`Spotify token refresh failed (${response.status}): ${data.error_description ?? data.error ?? 'unknown error'}`,
 		);
+		return { access_token: null };
 	}
 
 	return data;
@@ -40,6 +44,7 @@ const getAccessToken = cache(async () => {
 
 const getNowPlaying = cache(async () => {
 	const { access_token } = await getAccessToken();
+	if (!access_token) return null;
 
 	return fetch(NOW_PLAYING_ENDPOINT, {
 		headers: {
@@ -53,6 +58,7 @@ const getNowPlaying = cache(async () => {
 
 export const getTopTracks = cache(async () => {
 	const { access_token } = await getAccessToken();
+	if (!access_token) return null;
 
 	return fetch(TOP_TRACKS_ENDPOINT, {
 		headers: {
@@ -67,6 +73,8 @@ export const getTopTracks = cache(async () => {
 export async function fetchNowPlaying(): Promise<NowPlayingSong | null> {
 	try {
 		const response = await getNowPlaying();
+
+		if (!response) return null;
 
 		if (response.status === 204) {
 			return null;

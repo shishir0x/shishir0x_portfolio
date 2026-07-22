@@ -6,6 +6,8 @@ async function fetchTopTracks(): Promise<Song[] | null> {
 	try {
 		const response = await getTopTracks();
 
+		if (!response) return null;
+
 		if (!response.ok) {
 			console.error(
 				`Spotify top-tracks request failed with status ${response.status}`,
