@@ -12,7 +12,7 @@ export default function Hero() {
 		<main className='relative min-h-svh w-screen overflow-hidden'>
 			<SplashCursor
 				containerClassName='min-h-svh w-screen'
-				usePrimaryColors={true}
+				usePrimaryColors={false}
 			>
 				<div
 					className={classNames('relative min-h-svh', merryWeather.className)}
