@@ -27,7 +27,7 @@ export async function generateMetadata(props: {
 			type: 'article',
 			url: url,
 			publishedTime: metadata.publishedAt,
-			authors: ['Shishir Pandey'],
+			authors: ['shishir0x'],
 			images: [
 				{
 					url: ogImage,

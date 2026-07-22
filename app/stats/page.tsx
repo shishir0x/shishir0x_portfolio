@@ -3,7 +3,7 @@ import Header from '../components/header';
 
 export const metadata = {
 	title: 'Stats',
-	description: 'My Stats - Shishir Pandey',
+	description: 'My Stats - shishir0x',
 };
 
 export default function StatsPage() {

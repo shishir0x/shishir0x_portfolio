@@ -9,8 +9,8 @@ import './tailwind.css';
 
 export const metadata: Metadata = {
 	title: {
-		template: '%s | Shishir Pandey',
-		default: 'Shishir Pandey',
+		template: '%s | shishir0x',
+		default: 'shishir0x',
 	},
 	description: 'I build things for the web.',
 	metadataBase: new URL('https://shishirpandey085.com.np'),
