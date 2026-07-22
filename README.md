@@ -37,9 +37,6 @@ cp .env.example .env.local
 5. Add your environment variables to `.env.local`
 
 ```txt
-SPOTIFY_REFRESH_TOKEN=<Your env>
-SPOTIFY_CLIENT_SECRET=<Your env>
-SPOTIFY_CLIENT_ID=<Your env>
 // ...
 ```
 
