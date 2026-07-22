@@ -1,4 +1,4 @@
-import 'server-only';
+// Server-side Spotify API utilities
 import { cache } from 'react';
 import type { Artist, NowPlayingSong } from './types';
 

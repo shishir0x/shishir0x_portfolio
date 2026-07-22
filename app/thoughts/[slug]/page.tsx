@@ -3,6 +3,8 @@ import BackNavigation from '../../components/layouts/back-navigation';
 import { formatDate, getPostFromSlug, getPosts } from '../utils';
 import PageTitle from './page-title';
 
+export const revalidate = false;
+
 export function generateStaticParams() {
 	return getPosts().map((post) => ({ slug: post.slug }));
 }
@@ -25,7 +27,7 @@ export async function generateMetadata(props: {
 			type: 'article',
 			url: url,
 			publishedTime: metadata.publishedAt,
-			authors: ['Dale Larroder'],
+			authors: ['Shishir Pandey'],
 			images: [
 				{
 					url: ogImage,
