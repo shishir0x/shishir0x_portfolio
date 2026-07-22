@@ -19,7 +19,7 @@ export default function Projects() {
 		<>
 			{projects.map((project, index) => (
 				<motion.div
-					key={project.title}
+					key={`${project.title}-${index}`}
 					initial={{
 						scale: prefersReducedMotion ? 1 : 0.8,
 						opacity: 0,
