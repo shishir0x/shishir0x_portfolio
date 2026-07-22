@@ -1,0 +1,53 @@
+---
+title: 'The Power of SQL Window Functions for Data Analysis'
+publishedAt: '2024-03-12'
+summary: 'A deep dive into how SQL window functions can simplify complex data aggregation and ranking.'
+---
+
+When I first started as a data analyst, I often found myself writing convoluted subqueries and self-joins just to calculate running totals, moving averages, or rankings. That is, until I fully embraced **SQL Window Functions**.
+
+Window functions allow you to perform calculations across a set of table rows that are somehow related to the current row, without collapsing those rows into a single output row (unlike standard `GROUP BY` aggregates).
+
+### 1. ROW_NUMBER(), RANK(), and DENSE_RANK()
+
+These three are the bread and butter of ranking data.
+
+```sql
+SELECT 
+    employee_id,
+    department,
+    salary,
+    RANK() OVER(PARTITION BY department ORDER BY salary DESC) as rank
+FROM employees;
+```
+
+This query assigns a rank to each employee based on their salary, grouped by department. It's incredibly useful for finding the "top N" items per category.
+
+### 2. Running Totals
+
+Calculating a running total is a classic use case. Instead of self-joining, you simply use an `OVER()` clause with an `ORDER BY`:
+
+```sql
+SELECT 
+    order_date,
+    revenue,
+    SUM(revenue) OVER(ORDER BY order_date) as cumulative_revenue
+FROM daily_sales;
+```
+
+### 3. LEAD() and LAG()
+
+Want to compare a row to the previous row? `LAG()` is your best friend. This is perfect for calculating day-over-day or month-over-month growth.
+
+```sql
+SELECT 
+    month,
+    revenue,
+    LAG(revenue, 1) OVER(ORDER BY month) as previous_month_revenue,
+    (revenue - LAG(revenue, 1) OVER(ORDER BY month)) / LAG(revenue, 1) OVER(ORDER BY month) as growth_rate
+FROM monthly_sales;
+```
+
+### Conclusion
+
+Window functions are an absolute game-changer. They make your SQL code cleaner, more readable, and significantly more performant. If you aren't using them in your daily data analysis workflows, you're missing out on one of SQL's most powerful features.
