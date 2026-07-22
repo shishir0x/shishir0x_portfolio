@@ -29,12 +29,11 @@ export default function Hero() {
 						</h1>
 						<section className='relative z-10'>
 							<p className='text-base text-justify'>
-								I&apos;m Shishir Pandey — a Software Engineer and forever a
-								student of the craft. I love building things for the web and am
-								always on the lookout for new challenges and opportunities to
-								learn. I&apos;m passionate about creating beautiful and
-								functional user experiences. Right now, I&apos;m building cool
-								things at{' '}
+								I&apos;m Shishir Pandey — a Data Analyst and forever a student
+								of the craft. I love building things for the web and am always
+								on the lookout for new challenges and opportunities to learn.
+								I&apos;m passionate about creating beautiful and functional user
+								experiences. Right now, I&apos;m building cool things at{' '}
 								<a
 									href='https://www.aphex.co/'
 									className='underline-magical'
@@ -52,7 +51,7 @@ export default function Hero() {
 								<p>More about me: </p>
 								<div className='flex -ml-2'>
 									<Link
-										href='https://www.linkedin.com/in/dale-larroder/'
+										href='https://www.linkedin.com/in/shishir0x/'
 										target='_blank'
 										rel='noreferrer'
 										aria-label='linkedin'
