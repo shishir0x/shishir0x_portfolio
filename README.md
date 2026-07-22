@@ -49,14 +49,3 @@ SPOTIFY_CLIENT_ID=<Your env>
 bun run dev
 ```
 
-## Previous Version
-
-This is the second version of my website.
-
-Prevoius v1 version:
-
-- https://v1.dalelarroder.com/
-
-## Licence
-
-[MIT](https://github.com/shishir0x/shishir0x/blob/master/LICENSE) © [Shishir Pandey](https://www.dalelarroder.com)
