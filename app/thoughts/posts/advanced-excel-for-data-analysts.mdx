@@ -1,0 +1,27 @@
+---
+title: 'Advanced Excel for Data Analysts: Beyond VLOOKUP'
+publishedAt: '2026-01-10'
+summary: 'Why Excel is still a powerhouse for data analysis and the advanced functions you need to know.'
+---
+
+Despite the rise of Python, R, and modern BI tools, Excel remains an indispensable tool for Data Analysts. While `VLOOKUP` is often the first function people learn, true Excel mastery requires moving beyond it.
+
+### XLOOKUP: The VLOOKUP Killer
+
+If you have a modern version of Excel, `XLOOKUP` should completely replace `VLOOKUP` and `INDEX/MATCH`. It can look to the left, default to a specific value if not found, and even search from the bottom up.
+
+```excel
+=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])
+```
+
+### Power Query: Your Best Friend
+
+Power Query is Excel's built-in ETL (Extract, Transform, Load) tool. If you find yourself repeatedly unpivoting columns, removing duplicates, or splitting text every time you get a new CSV, you need Power Query. You build the transformation steps once, and next time the data updates, you just click "Refresh."
+
+### Dynamic Arrays (FILTER, SORT, UNIQUE)
+
+Dynamic arrays changed how Excel works by allowing formulas to "spill" over multiple cells.
+- `=UNIQUE(A2:A100)` instantly extracts distinct values.
+- `=FILTER(A2:C100, B2:B100="Sales")` replaces complex array formulas or manual filtering.
+
+Mastering these tools will make your ad-hoc data analysis significantly faster and more robust.

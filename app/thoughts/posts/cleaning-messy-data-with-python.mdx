@@ -1,0 +1,43 @@
+---
+title: 'Cleaning Messy Data with Python'
+publishedAt: '2026-04-18'
+summary: 'Practical techniques for handling missing values, outliers, and inconsistent formats in Python.'
+---
+
+They say data scientists spend 80% of their time cleaning data and 20% complaining about cleaning data. As a Data Analyst, dealing with messy data is a daily reality. Here are some fundamental techniques for cleaning data using Python.
+
+### 1. Handling Missing Values
+
+Dropping missing values (`df.dropna()`) is easy, but it can discard valuable information. Imputation is often better.
+
+```python
+# Impute missing numerical values with the median
+df['salary'] = df['salary'].fillna(df['salary'].median())
+
+# Forward fill for time series data
+df['temperature'] = df['temperature'].ffill()
+```
+
+### 2. Dealing with Inconsistent Text
+
+Inconsistent capitalization and whitespace can ruin aggregations (e.g., treating "New York" and "new york " as two different cities).
+
+```python
+# Standardize strings to lowercase and strip whitespace
+df['city'] = df['city'].str.lower().str.strip()
+```
+
+### 3. Outlier Detection
+
+Outliers can skew your averages significantly. A common way to handle them is using the Interquartile Range (IQR).
+
+```python
+Q1 = df['revenue'].quantile(0.25)
+Q3 = df['revenue'].quantile(0.75)
+IQR = Q3 - Q1
+
+# Filter out rows outside 1.5 * IQR
+df_clean = df[~((df['revenue'] < (Q1 - 1.5 * IQR)) | (df['revenue'] > (Q3 + 1.5 * IQR)))]
+```
+
+Always remember: don't blindly remove outliers. Investigate them first—they often contain the most interesting insights!

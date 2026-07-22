@@ -1,0 +1,29 @@
+---
+title: 'Building Modern Data Pipelines with dbt'
+publishedAt: '2026-03-05'
+summary: 'How dbt (data build tool) bridges the gap between data engineering and data analysis.'
+---
+
+Historically, data pipelines were entirely the domain of Data Engineers. Analysts would write the business logic in SQL, hand it over to engineering, and wait for it to be implemented in Airflow or a similar orchestrator. **dbt (data build tool)** changed everything.
+
+### What is dbt?
+
+dbt is a transformation workflow that lets teams quickly and collaboratively deploy analytics code following software engineering best practices like modularity, portability, CI/CD, and documentation. It operates strictly in the "T" of ELT (Extract, Load, Transform).
+
+### Why Analysts Love It
+
+1. **SQL-first:** You don't need to know Python or Scala. If you can write `SELECT` statements, you can build production-grade pipelines in dbt.
+2. **Modularity:** Instead of massive 1,000-line SQL scripts, you build small, reusable models (CTEs) that reference each other using the `ref()` function.
+3. **Testing:** You can add generic tests (like `unique`, `not_null`, `accepted_values`) to your columns with a few lines of YAML.
+
+```yaml
+models:
+  - name: dim_customers
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+```
+
+By empowering analysts to own the transformation layer, dbt drastically reduces the time to insight and improves data quality across the organization.

@@ -1,0 +1,25 @@
+---
+title: 'A/B Testing Fundamentals for Analysts'
+publishedAt: '2026-02-14'
+summary: 'A practical guide to designing, running, and analyzing A/B tests to make data-driven decisions.'
+---
+
+A/B testing is the gold standard for measuring causality in product changes or marketing campaigns. However, setting up a test correctly requires more than just looking at which variation has a higher conversion rate.
+
+### 1. Define Your Hypothesis
+
+Before running a test, you need a clear hypothesis. 
+*Bad:* "Let's change the button color and see what happens."
+*Good:* "By changing the CTA button from green to red, we will increase click-through rate by 5%, because red creates a higher sense of urgency."
+
+### 2. Determine Sample Size
+
+You cannot just run a test until it "looks significant" (this is called peeking, and it inflates your false positive rate). You must calculate your required sample size upfront based on your baseline conversion rate, Minimum Detectable Effect (MDE), and desired statistical power (usually 80%).
+
+### 3. Statistical Significance vs. Practical Significance
+
+Just because a result is statistically significant (p < 0.05) doesn't mean it's worth implementing. If a new feature increases conversion by 0.01% with statistical certainty, but costs $10,000 to maintain, it lacks *practical* significance.
+
+### Conclusion
+
+A/B testing is a powerful tool, but it's easy to draw the wrong conclusions if you don't adhere to statistical rigor. Always plan your tests carefully before launching them.
