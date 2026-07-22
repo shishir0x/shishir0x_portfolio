@@ -33,18 +33,7 @@ export default function Hero() {
 								of the craft. I love diving into datasets to uncover patterns
 								and am always on the lookout for new challenges and
 								opportunities to learn. I&apos;m passionate about data
-								storytelling and driving informed decisions. Right now, I&apos;m
-								analyzing data at{' '}
-								<a
-									href='https://www.aphex.co/'
-									className='underline-magical'
-									target='_blank'
-									rel='noreferrer'
-									data-skip-splash-cursor
-								>
-									Aphex
-								</a>
-								.
+								storytelling and driving informed decisions.
 							</p>
 						</section>
 						<section className='relative z-10 flex space-x-4 items-center text-sm'>
