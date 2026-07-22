@@ -14,6 +14,13 @@ export const metadata: Metadata = {
 	},
 	description: 'I build things for the web.',
 	metadataBase: new URL('https://dalelarroder.com'),
+	openGraph: {
+		images: [
+			{
+				url: '/opengraph-image.png',
+			},
+		],
+	},
 };
 
 interface RootLayoutProps {
