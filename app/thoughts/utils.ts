@@ -80,8 +80,8 @@ export function getPosts(): BlogPost[] {
 		.filter((post) => !post.metadata.draft)
 		.sort((a, b) => {
 			return (
-				new Date(b.metadata.publishedAt).getTime() -
-				new Date(a.metadata.publishedAt).getTime()
+				new Date(a.metadata.publishedAt).getTime() -
+				new Date(b.metadata.publishedAt).getTime()
 			);
 		});
 }
