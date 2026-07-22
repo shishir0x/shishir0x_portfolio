@@ -95,13 +95,13 @@ export default function ProjectPreview({ modal, projects }: ProjectModalProps) {
 						transition: 'top 0.6s cubic-bezier(0.76, 0, 0.24, 1)',
 					}}
 				>
-					{projects.map((project) => {
+					{projects.map((project, index) => {
 						const { src, color } = project;
 						return (
 							<div
 								className='flex h-full w-full items-center justify-center'
 								style={{ backgroundColor: color }}
-								key={`modal_${src}`}
+								key={`modal_${src}_${index}`}
 							>
 								<Image
 									className='h-auto'
