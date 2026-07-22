@@ -1226,15 +1226,15 @@ function SplashCursor({
 			if (usePrimaryColors) {
 				// Primary color palette
 				const primaryColors = [
-					{ r: 0xfd / 255, g: 0xd1 / 255, b: 0xd9 / 255 }, // #fdd1d9
-					{ r: 0xfb / 255, g: 0xa4 / 255, b: 0xbc / 255 }, // #fba4bc
-					{ r: 0xf5 / 255, g: 0x75 / 255, b: 0xa5 / 255 }, // #f575a5
-					{ r: 0xeb / 255, g: 0x51 / 255, b: 0x9b / 255 }, // #eb519b
-					{ r: 0xde / 255, g: 0x1d / 255, b: 0x8d / 255 }, // #de1d8d
-					{ r: 0xbe / 255, g: 0x15 / 255, b: 0x88 / 255 }, // #be1588
-					{ r: 0x9f / 255, g: 0x0e / 255, b: 0x7f / 255 }, // #9f0e7f
-					{ r: 0x80 / 255, g: 0x09 / 255, b: 0x72 / 255 }, // #800972
-					{ r: 0x6a / 255, g: 0x05 / 255, b: 0x68 / 255 }, // #6a0568
+					{ r: 135 / 255, g: 206 / 255, b: 235 / 255 }, // Sky Blue
+					{ r: 0 / 255, g: 191 / 255, b: 255 / 255 }, // Deep Sky Blue
+					{ r: 173 / 255, g: 216 / 255, b: 230 / 255 }, // Light Sky Blue
+					{ r: 176 / 255, g: 224 / 255, b: 230 / 255 }, // Powder Blue
+					{ r: 70 / 255, g: 130 / 255, b: 180 / 255 }, // Steel Blue
+					{ r: 30 / 255, g: 144 / 255, b: 255 / 255 }, // Dodger Blue
+					{ r: 0 / 255, g: 255 / 255, b: 255 / 255 }, // Cyan
+					{ r: 224 / 255, g: 255 / 255, b: 255 / 255 }, // Light Cyan
+					{ r: 175 / 255, g: 238 / 255, b: 238 / 255 }, // Pale Turquoise
 				];
 
 				// Select a random color from the palette
